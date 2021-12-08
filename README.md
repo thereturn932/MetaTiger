@@ -1,15 +1,19 @@
-# Basic Sample Hardhat Project
+# Meta Tiger Token
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project contains source code of token Meta TIGER (TIGR)
 
-Try running some of the following tasks:
+node v14.18.2
+npm 6.14.15
+hardhat 2.7.0
+
+To deploy clone repo then, create a `.env` file and write
 
 ```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+PRIVATE_KEY = "YOUR_PRIVATE_KEY"
+``` 
+
+Then run
+
+```shell
+npx hardhat run scripts/deploy.js --network mainnet
 ```
