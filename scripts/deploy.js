@@ -14,7 +14,7 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const MetaTiger = await hre.ethers.getContractFactory("MetaTiger");
+  const MetaTiger = await hre.ethers.getContractFactory("MetaTIGR");
   const metaTiger = await MetaTiger.deploy();
 
   await metaTiger.deployed();
