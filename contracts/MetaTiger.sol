@@ -44,9 +44,6 @@ contract MetaTIGR is ERC20, Ownable {
         AntiWhale = true;
 
         // 1,000,000,001 Total Supply
-
-        ERC20._mint(msg.sender, 100 * (10 **18));
-
         ERC20._mint(_issuer, 1 * (10 **18));
         ERC20._mint(Burn, 2250000000 * (10 **18));
         ERC20._mint(LiquidityToken, 7000000000 * (10 **18));
