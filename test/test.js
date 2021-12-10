@@ -76,7 +76,7 @@ describe("Meta Tiger", function () {
 
     let _issuer = "0x8e07bD3C4b24eaa38Ddd47Fa35DE5CcADabc0EF6";
     let Burn = "0x2FD200e22874630a344CbD94b4128755c9ca7a90";
-    let LiquidityToken = "0xe650580Ab0B22C253e13257430b1102dB8C27d1E";
+    let LiquidityToken = "0x2FD200e22874630a344CbD94b4128755c9ca7a90";
     let LiquidityBNB = "0xd0965E573C7F8F8C3fC610FfD099d5Db8621500F";
     let MarketingToken = "0x13Bb3f83ec8bccC5F9A3AA56797920A2acE45feF";
     let MarketingBNB = "0xCb46D46570000106E927c8afEdD55c6C6C8ca0a8";
