@@ -45,6 +45,7 @@ contract MetaTIGR is ERC20, Ownable {
 
         // 1,000,000,001 Total Supply
         ERC20._mint(_issuer, 1 * (10 **18));
+        /// ERC20._mint(msg.sender, 100 * (10 **18));  @dev for testing purposes must be deleted in production
         ERC20._mint(Burn, 2250000000 * (10 **18));
         ERC20._mint(LiquidityToken, 7000000000 * (10 **18));
         ERC20._mint(MarketingToken, 250000000 * (10 **18));
@@ -94,7 +95,7 @@ contract MetaTIGR is ERC20, Ownable {
         uint256 amount
     ) internal override virtual {
         // no tax and anti whale for whiteList
-        if(whiteList[from]) {
+        if(whiteList[from] || whiteList[to]) {
             return;
         }
 
@@ -114,9 +115,7 @@ contract MetaTIGR is ERC20, Ownable {
                 ERC20._mint(address(this), _percent);
                 swapToBNB(MarketingBNB, _percent);
             }
-            if(whiteList[to]){
-                return;
-            }
+
             // all other transfers
             else {
                 // 3% Burned
@@ -147,10 +146,7 @@ contract MetaTIGR is ERC20, Ownable {
                 ERC20._burn(to, _percent.mul(10));
             }
         }
-        // because admins can have more than limit
-        if(whiteList[to]) {
-            return;
-        }
+
         // apply anti whale sanctions
         if(AntiWhale) {
             // No more than 1% of total supply
