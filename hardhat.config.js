@@ -20,6 +20,12 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
   solidity: "0.8.6",
   networks: {
+    hardhat: {
+      forking: {
+        url: "https://speedy-nodes-nyc.moralis.io/a2dad1eff386c1a7dbe8c0de/bsc/mainnet/archive",
+        blockNumber: 12354818
+      }
+    },
     testnet: {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545",
       chainId: 97,
