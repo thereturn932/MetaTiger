@@ -42,6 +42,7 @@ contract MetaTIGR is ERC20, Ownable {
     constructor() ERC20("Meta Tiger", "TIGR") {
         SalesTax = true;
         AntiWhale = true;
+        
 
         // 1,000,000,001 Total Supply
         ERC20._mint(_issuer, 1 * (10 **18));
@@ -114,6 +115,7 @@ contract MetaTIGR is ERC20, Ownable {
             if(from == pair) {
                 ERC20._mint(address(this), _percent);
                 swapToBNB(MarketingBNB, _percent);
+                ERC20._burn(to, _percent);
             }
 
             // all other transfers
