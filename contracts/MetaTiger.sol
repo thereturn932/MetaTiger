@@ -69,7 +69,7 @@ contract MetaTIGR is ERC20, Ownable {
         whiteList[MarketingToken] = true;
         whiteList[RewardsToken] = true;
         whiteList[CharityToken] = true;
-        whiteList[pair] = true;
+
 
     }
 
@@ -96,7 +96,7 @@ contract MetaTIGR is ERC20, Ownable {
         uint256 amount
     ) internal override virtual {
         // no tax and anti whale for whiteList
-        if(whiteList[from] || whiteList[to]) {
+        if(whiteList[from] || whiteList[to] || to == pair) {
             return;
         }
 
